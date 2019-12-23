@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta charset="UTF-8">
+	<title>PlayList</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	
+</head>
+<body style="background-color: #0A050F">
+
+	<div class="conteiner-fluid">
+
+		<div class="alert alert-info" role="alert">
+		  Some text
+		</div>
+		
+		<div class="row">
+
+			<div class="col-md-9">
+
+				<div class="conteiner-fluid">
+
+					<div class="text-center"><h1><span class="badge badge-secondary">PLayList</span></h1></div>
+					
+
+					<div class="row">
+
+						<div class="col-md-4">
+							<div class="block">
+								<div class="card text-white bg-dark mx-md-3 mb-2" style="max-width: 18rem;">
+
+								  <div class="card-header">Autor</div>
+
+									<div class="card-body">
+									   <h5 class="card-title">Name</h5>
+									   <p class="card-text">Len</p>
+
+									   <div class="text-center"><button type="button" class="btn btn-outline-danger">Delete</button></div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+			
+			
+			<div class="col-md-3">
+			
+				<div class="card bg-light mb-3" style="max-width: 18rem;">
+
+				 	<div class="card-header text-center"><h1><span class="badge badge-secondary">Add music</span></h1></div>
+
+				  	<div class="card-body">
+
+				    	<h5 class="card-title"><div class="alert alert-danger" role="alert">Error</div></h5>
+
+				    	<p class="card-text">
+
+				    		<form>
+
+						  		<div class="form-group mx-md-3 mb-2">
+							    	<label for="name">Autor</label>
+							    	<input type="text" class="form-control" aria-describedby="Autor" id="autor">
+						  		</div>
+
+						  		<div class="form-group mx-md-3 mb-2">
+								    <label for="name">Name</label>
+								    <input type="password" class="form-control" aria-describedby="Name" id="name">
+								</div>
+
+								<div class="input-group form-group mx-md-1 mb-2">
+									<label for="len" class="mx-md-3 mb-2">Len</label>
+
+									<div id="len" class="mx-md-3 mb-2">
+
+										<div class="input-group mb-3">
+											<input type="number" value="0" min="0" max="180" step="1" aria-label="min" class="form-control">
+
+											<div class="input-group-prepend">
+												<span class="input-group-text" id="basic-addon1">Min.</span>
+											</div>
+											
+										</div>
+										
+										<div class="input-group mb-3">
+											<input type="number" value="0" min="0" max="59" step="1" aria-label="sec" class="form-control">
+
+											<div class="input-group-prepend">
+												<span class="input-group-text" id="basic-addon1">Sec.</span>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<button type="button" class="btn btn-outline-success form-group mx-md-3 mb-2">Add</button>
+					
+							</form>
+
+				    	</p>
+
+				  	</div>
+
+				</div>
+			
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>
