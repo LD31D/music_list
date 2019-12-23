@@ -17,7 +17,6 @@ class DataBase:
 		except sqlite3.OperationalError:
 			pass
 
-
 	def write(self, autor, name, len):
 		self.cursor.execute(f''' INSERT INTO music (autor, name, len) 
 									VALUES ("{autor}", "{name}", "{len}") ''')
