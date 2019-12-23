@@ -16,7 +16,7 @@
 	<div class="conteiner-fluid">
 
 		<div class="alert alert-info" role="alert">
-		  Some text
+		  All bugs found in the program are features and are provided by the developer !!!
 		</div>
 		
 		<div class="row">
@@ -30,23 +30,32 @@
 
 					<div class="row">
 
-						<div class="col-md-4">
-							<div class="block">
-								<div class="card text-white bg-dark mx-md-3 mb-2" style="max-width: 18rem;">
+					{% if music != [None] %}
+						{% for track in music %}
+							<div class="col-md-4">
+								<div class="block">
+									<div class="card text-white bg-dark mx-md-3 mb-2" style="max-width: 18rem;">
 
-								  <div class="card-header">Autor</div>
+									  <div class="card-header">{{ track[1] }}</div>
 
-									<div class="card-body">
-									   <h5 class="card-title">Name</h5>
-									   <p class="card-text">Len</p>
+										<div class="card-body">
+											<h5 class="card-title">{{ track[2] }}</h5>
+											<p class="card-text">{{ track[3] }}</p>
+											
+											<form method="post" action="/delete-music/">	
+												<div class="text-center">
+													<input type="hidden" name="id" value="{{ track[0] }}">
+													<input type="submit" class="btn btn-outline-danger" value="Delete">
+												</div>
+											</form>
 
-									   <div class="text-center"><button type="button" class="btn btn-outline-danger">Delete</button></div>
+										</div>
+
 									</div>
-
 								</div>
 							</div>
-						</div>
-
+						{% endfor %}
+					{% endif %}
 
 					</div>
 				</div>
@@ -61,20 +70,22 @@
 
 				  	<div class="card-body">
 
-				    	<h5 class="card-title"><div class="alert alert-danger" role="alert">Error</div></h5>
+				  		{% if error %}
+				    		<h5 class="card-title"><div class="alert alert-danger" role="alert">Error</div></h5>
+				    	{% endif %}
 
 				    	<p class="card-text">
 
-				    		<form>
+				    		<form method="post" action="/add-music/">
 
 						  		<div class="form-group mx-md-3 mb-2">
 							    	<label for="name">Autor</label>
-							    	<input type="text" class="form-control" aria-describedby="Autor" id="autor">
+							    	<input type="text" class="form-control" aria-describedby="Autor" name="autor">
 						  		</div>
 
 						  		<div class="form-group mx-md-3 mb-2">
 								    <label for="name">Name</label>
-								    <input type="password" class="form-control" aria-describedby="Name" id="name">
+								    <input type="text" class="form-control" aria-describedby="Name" name="name">
 								</div>
 
 								<div class="input-group form-group mx-md-1 mb-2">
@@ -83,7 +94,7 @@
 									<div id="len" class="mx-md-3 mb-2">
 
 										<div class="input-group mb-3">
-											<input type="number" value="0" min="0" max="180" step="1" aria-label="min" class="form-control">
+											<input type="number" value="0" min="0" max="180" step="1"name="min" class="form-control">
 
 											<div class="input-group-prepend">
 												<span class="input-group-text" id="basic-addon1">Min.</span>
@@ -92,7 +103,7 @@
 										</div>
 										
 										<div class="input-group mb-3">
-											<input type="number" value="0" min="0" max="59" step="1" aria-label="sec" class="form-control">
+											<input type="number" value="0" min="0" max="59" step="1" name="sec" class="form-control">
 
 											<div class="input-group-prepend">
 												<span class="input-group-text" id="basic-addon1">Sec.</span>
@@ -101,7 +112,7 @@
 									</div>
 								</div>
 
-								<button type="button" class="btn btn-outline-success form-group mx-md-3 mb-2">Add</button>
+								<input type="submit" class="btn btn-outline-success form-group mx-md-3 mb-2" value="Add">
 					
 							</form>
 
