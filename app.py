@@ -34,7 +34,7 @@ def add_music():
 	and 0 <= int(seconds) <= 59):
 		if len("0" + seconds) == 2:
 			seconds = "0" + seconds
-		db.write(autor, name, minutes + ":" + seconds)
+		db.write(autor, name, f"{minutes}:{seconds}")
 
 	else:
 		music = db.return_table()
