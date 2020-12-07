@@ -26,8 +26,8 @@ def add_music():
 	minutes = request.form["min"]
 	seconds = request.form["sec"]
 
-	if (len(autor.replace(" ", "")) != 0 
-	and len(name.replace(" ", "")) != 0 
+	if (len(autor.replace(" ", "")) 
+	and len(name.replace(" ", "")) 
 	and minutes.isdigit() 
 	and seconds.isdigit() 
 	and 0 <= int(minutes) <= 180 
